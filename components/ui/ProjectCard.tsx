@@ -10,7 +10,7 @@ interface ProjectCardProps {
   description: string;
   image: string;
   tags: string[];
-  githubUrl: string;
+  githubUrl?: string;
   deployUrl?: string;
 }
 
@@ -39,16 +39,17 @@ export function ProjectCard({ title, description, image, tags, githubUrl, deploy
         </div>
       </CardContent>
       <CardFooter className="p-6 pt-0 flex gap-4 relative z-30">
-        {/* Cambiado <Link> por <a> estándar para URLs externas */}
-        <Button asChild variant="secondary" size="sm" className="flex-1 bg-white/10 hover:bg-white/20 text-white cursor-pointer relative z-50">
-          <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-            <FaGithub className="w-4 h-4 mr-2" /> Código
-          </a>
-        </Button>
+        {githubUrl && (
+          <Button asChild variant="secondary" size="sm" className="flex-1 bg-white/10 hover:bg-white/20 text-white cursor-pointer relative z-50">
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+              <FaGithub className="w-4 h-4 mr-2" /> Código
+            </a>
+          </Button>
+        )}
         {deployUrl && (
           <Button asChild size="sm" className="flex-1 cursor-pointer relative z-50">
             <a href={deployUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="w-4 h-4 mr-2" /> Deploy
+              <ExternalLink className="w-4 h-4 mr-2" /> {githubUrl ? "Deploy" : "Visitar Web"}
             </a>
           </Button>
         )}

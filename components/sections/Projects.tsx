@@ -5,6 +5,13 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 
 const projectsData = [
   {
+    title: "Temotiva",
+    description: "Desarrollo profesional Full Stack liderando la migración integral de una arquitectura de HTML puro a React y Next.js. Implementación de backend escalable, optimización de estilos con Tailwind CSS y mejora sustancial en el rendimiento de la plataforma.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    tags: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+    deployUrl: "https://temotiva.com/"
+  },
+  {
     title: "MatchMaker",
     description: "Plataforma para conectar reclutadores y candidatos usando IA. Evalúa la compatibilidad del CV en PDF con la oferta de trabajo mediante Google Gemini, devolviendo un 'Match Score' y plan de acción.",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop",
